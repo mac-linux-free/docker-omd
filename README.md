@@ -12,7 +12,7 @@ Build from Source
 
 The Docker image can be built as follows:
 
-    git clone https://github.com/fstab/docker-omd
+    git clone https://github.com/mac-linux-free/docker-omd.git
     cd docker-omd
     docker build -t="omd" .
     docker run -d --restart=always --name=omd -p=80:80 -p=443:443 omd

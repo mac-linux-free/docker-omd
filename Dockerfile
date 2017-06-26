@@ -3,17 +3,17 @@
 # Forked from https://github.com/jwarlander/docker-omd
 #
 ## Version: 0.1
-FROM debian:jessie
+FROM debian:stretch
 # FROM ubuntu:14.04
 MAINTAINER einfachnuralex@gmx.net
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ssh ssmtp lsb-release wget nano nagios-plugins-basic && \
-    wget --no-check-certificate https://mathias-kettner.de/support/1.4.0/check-mk-raw-1.4.0p5_0.jessie_amd64.deb && \
-    (dpkg -i check-mk-raw-1.4.0p5_0.jessie_amd64.deb || true) && \
+    wget --no-check-certificate https://mathias-kettner.de/support/1.4.0p7/check-mk-raw-1.4.0p7_0.stretch_amd64.deb && \
+    (dpkg -i check-mk-raw-1.4.0p7_0.stretch_amd64.deb || true) && \
     apt-get install -y -f --no-install-recommends  && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    rm -rf check-mk-raw-1.4.0p5_0.jessie_amd64.deb
+    rm -rf check-mk-raw-1.4.0p7_0.stretch_amd64.deb
 
 RUN omd create monitoring
 RUN omd config monitoring set TMPFS off

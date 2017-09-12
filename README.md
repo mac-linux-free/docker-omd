@@ -16,3 +16,9 @@ The Docker image can be built as follows:
     cd docker-omd
     docker build -t="omd" .
     docker run -d --restart=always --name=omd -p=80:80 -p=443:443 omd
+    
+    docker exec -it omd bash
+    omd create site
+    omd config site #disable cron and tmpfs
+    omd start site
+    htpasswd /opt/omd/sites/site/etc/htpasswd omdadmin

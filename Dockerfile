@@ -9,11 +9,11 @@ MAINTAINER mac.linux.free@googlemail.com
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ssh ssmtp lsb-release wget nano nagios-plugins-basic && \
-    wget --no-check-certificate https://mathias-kettner.de/support/1.4.0p19/check-mk-raw-1.4.0p19_0.stretch_amd64.deb && \
-    (dpkg -i check-mk-raw-1.4.0p19_0.stretch_amd64.deb || true) && \
+    wget --no-check-certificate https://mathias-kettner.de/support/1.4.0p22/check-mk-raw-1.4.0p22_0.stretch_amd64.deb && \
+    (dpkg -i check-mk-raw-1.4.0p22_0.stretch_amd64.deb || true) && \
     apt-get install -y -f --no-install-recommends  && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    rm -rf check-mk-raw-1.4.0p19_0.stretch_amd64.deb
+    rm -rf check-mk-raw-1.4.0p22_0.stretch_amd64.deb
 
 RUN omd create monitoring
 RUN omd config monitoring set TMPFS off

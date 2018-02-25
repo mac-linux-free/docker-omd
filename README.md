@@ -4,7 +4,7 @@ docker-omd
 [Dockerfile](https://www.docker.com) for [Open Monitoring Distribution (OMD)](http://omdistro.org).
 
 OMD will become available on [http://172.X.X.X/default](http://172.X.X.X/default).
-The default login is `omdadmin` with password `omd`.
+The default login is `cmkadmin` with password ``.
 To find out the IP address, run `ip addr` in the container shell.
 
 Build from Source
@@ -21,4 +21,4 @@ The Docker image can be built as follows:
     omd create site
     omd config site #disable cron and tmpfs
     omd start site
-    htpasswd /opt/omd/sites/site/etc/htpasswd omdadmin
+    htpasswd /opt/omd/sites/site/etc/htpasswd cmkadmin

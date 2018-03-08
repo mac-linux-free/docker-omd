@@ -15,7 +15,7 @@ The Docker image can be built as follows:
     git clone https://github.com/mac-linux-free/docker-omd.git
     cd docker-omd
     docker build -t="omd" .
-    docker run -d --restart=always --name=omd -p=80:80 -p=443:443 omd
+    docker run -d --restart=always --name=omd -p=80:80 -p=443:443 -v /docker/opt:/opt omd
     
     docker exec -it omd bash
     omd create site

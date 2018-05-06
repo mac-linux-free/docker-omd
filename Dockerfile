@@ -13,7 +13,7 @@ RUN apt-get update && \
     (dpkg -i check-mk-raw-1.4.0p31_0.stretch_amd64.deb || true) && \
     apt-get install -y -f --no-install-recommends  && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    rm -rf check-mk-raw-1.4.0p24_0.stretch_amd64.deb
+    rm -rf check-mk-raw-1.4.0p31_0.stretch_amd64.deb
 
 RUN omd create monitoring
 RUN omd config monitoring set TMPFS off
